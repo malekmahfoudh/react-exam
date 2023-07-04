@@ -3,7 +3,7 @@
         "quote": "That's what she said",
         "author": "Michael Scott",
         "id": 1,
-        "img": "",
+        "img": "/images/MS.avif",
         "episode": "Almost every episode"
 
     },
@@ -11,7 +11,7 @@
         "quote": "Would I rather be feared or loved? Easy. Both. I want people to be afraid of how much they love me.",
         "author": "Michael Scott",
         "id": 2,
-        "img": "",
+        "img": "/images/MS.avif",
         "episode": "Season 2, episode 6 'The Fight'"
 
     },
@@ -19,7 +19,7 @@
         "quote": "I am Beyoncé, always.",
         "author": "Michael Scott",
         "id": 3,
-        "img": "",
+        "img": "/images/MS.avif",
         "episode": "Season 6, episode 25 'The Chump'"
 
     },
@@ -27,7 +27,7 @@
         "quote": "Sometimes I'll start a sentence and I don't even know where it's going. I just hope I find it along the way.",
         "author": "Michael Scott",
         "id": 4,
-        "img": "",
+        "img": "/images/MS.avif",
         "episode": "Season 5, episode 11 'The Duel'"
 
     },
@@ -35,7 +35,7 @@
         "quote": "I'm not superstitious, but I am a little stitious.",
         "author": "Michael Scott",
         "id": 5,
-        "img": "",
+        "img": "/images/MS.avif",
         "episode": "Season 4, episode 1 'Fun Run'"
 
     },
@@ -43,7 +43,7 @@
         "quote": "You cheated on me?....When I specifically asked you not to?",
         "author": "Michael Scott",
         "id": 6,
-        "img": "",
+        "img": "/images/MS.avif",
         "episode": "Season 4, episode 14 'Goodbye Toby'"
 
     },
@@ -51,7 +51,7 @@
         "quote": "You know what they say. Fool me once, strike one, but fool me twice...strike three.",
         "author": "Michael Scott",
         "id": 7,
-        "img": "",
+        "img": "/images/MS.avif",
         "episode": "Season 3, episode 12 'Traveling Salesmen'"
 
     },
@@ -59,7 +59,7 @@
         "quote": "If I had a gun with two bullets and I was in a room with Hitler, Bin Laden, and Toby, I would shoot Toby twice.",
         "author": "Michael Scott",
         "id": 8,
-        "img": "",
+        "img": "/images/MS.avif",
         "episode": "Season 6, episode 25 'The Chump'"
 
     },
@@ -67,7 +67,7 @@
         "quote": "And I knew exactly what to do. But in a much more real sense, I had no idea what to do.",
         "author": "Michael Scott",
         "id": 9,
-        "img": "",
+        "img": "/images/MS.avif",
         "episode": "Season 5, episode 15 'Lecture Circuit: Part 2'"
 
     },
@@ -75,7 +75,7 @@
         "quote": "The worst thing about prison was the Dementors. They were flying all over the place and they were scary and they'd come down and they'd suck the soul out of your body and it hurt!",
         "author": "Michael Scott",
         "id": 10,
-        "img": "",
+        "img": "/images/MS.avif",
         "episode": "Season 3, episode 9 'The Convict'"
 
     }

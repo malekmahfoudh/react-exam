@@ -1,0 +1,13 @@
+@import "../variables";
+
+.main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left:0 auto ;
+}
+
+.inputField {
+    border-color: blue;
+}

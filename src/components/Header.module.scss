@@ -1,0 +1,12 @@
+@import "../variables";
+
+.header {
+    background-color: $primaryColor;
+    position: sticky;
+    top: 0;
+    padding: 1.5rem;
+    color: $secondaryColor;
+    h1 {
+        @include reset-user-agent-margins;
+    }
+}

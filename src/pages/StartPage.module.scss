@@ -11,3 +11,10 @@
 .inputField {
     border-color: blue;
 }
+
+.quoteCards {
+    display: flex;
+    flex-direction: column;
+    min-height: 100px;
+    min-width: 200px;
+}

@@ -1,22 +1,27 @@
-// components/QuoteCard.js
-import React from "react";
 import { useDispatch } from "react-redux";
-import { Link } from "react-router-dom";
-import { saveQuote } from "../actions/quotesAction";
+import { useNavigate } from "react-router-dom";
+import style from './QuoteCard.module.scss';
+import { saveQuote } from "../actions/quoteAction";
+import { removeQuote } from "../actions/quoteAction";
+import Button from "./Button"
 
-const QuoteCard = ({ quote }) => {
+function QuoteCard ({ quote }) {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
-  const handleSaveQuote = () => {
-    dispatch(saveQuote(quote));
-  };
+  function addQuoteToSaved() {
+    dispatch(saveQuote(quote))
+  }
+
+  function navigateToQuotePage() {
+    navigate('/quotepage/' + quote.id)
+  }
 
   return (
-    <div>
-      <h3>{quote.text}</h3>
-      <Link to={`/quote/${quote.id}`}>See Details</Link>
-      <button onClick={handleSaveQuote}>Save Quote</button>
-    </div>
+    <article className={style.quoteCard}>
+      <h3>{quote.quote}</h3>
+      <Button title="See More" action={navigateToQuotePage}/>
+    </article>
   );
 };
 

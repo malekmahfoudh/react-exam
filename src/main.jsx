@@ -1,8 +1,8 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import App from './app/App'
+import App from './App'
 import './index.scss'
-import quoteReducer from './reducers/quotesReducer'
+import quoteReducer from './reducers/quoteReducer'
 import { legacy_createStore as createStore } from 'redux';
 import { Provider } from 'react-redux'
 

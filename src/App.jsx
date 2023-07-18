@@ -7,6 +7,7 @@ import Header from "./components/Header";
 import AddQuote from "./pages/AddQuote";
 import quotesData from "./assets/quotes.json";
 import EditQuote from "./pages/EditQuote";
+import DeleteQuote from "./pages/DeleteQuote"
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { fillStock } from "./actions/quoteAction";
@@ -32,6 +33,7 @@ function App() {
         <Route path="/quotepage/:id" element={<QuotePage />} />
         <Route path="/add" element={<AddQuote />}></Route>
         <Route path="/edit/:id" element={<EditQuote />}></Route>
+        <Route path="/delete/:id" element={<DeleteQuote />}></Route>
       </Routes>
     </BrowserRouter>
   );

@@ -1,38 +1,65 @@
-import { useEffect, useState } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux'
-import { editQuote } from '../actions/quoteAction';
-import Form from '../components/Form';
+import { useEffect, useState } from "react";
+import { useNavigate, useParams } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { editQuote } from "../actions/quoteAction";
+import Form from "../components/Form";
 
 export default function EditQuote() {
-    const dispatch = useDispatch()
-    const navigate = useNavigate()
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
     const state = useSelector((state) => state.quotes);
     const params = useParams();
-
-    const [quote, setQuote] = useState()
-    const [newQuote, setNewQuote] = useState({ author: "", quote: "", episode: "" })
+    const [quote, setQuote] = useState({
+        author: "",
+        quote: "",
+        episode: "",
+    });
+    const [newQuote, setNewQuote] = useState({
+        author: "",
+        quote: "",
+        episode: "",
+    });
 
     useEffect(() => {
-        let currentQuote = state.find((q) => params.id === q.id) 
-        setQuote(currentQuote)
-    }, [state, params.id])
+        let currentQuote = state.find((q) => parseInt(params.id) === q.id);
+        setQuote(currentQuote);
+    }, [state, params.id]);
 
     const handleEdit = (e) => {
         e.preventDefault();
-        if(newQuote.author) {
-            dispatch(editQuote(params.id, "author", newQuote.author));
+        if (newQuote.author) {
+            dispatch(editQuote(parseInt(params.id), "author", newQuote.author));
         }
-        if(newQuote.quote) {
-            dispatch(editQuote(params.id, "quote", newQuote.quote))
+        if (newQuote.quote) {
+            dispatch(editQuote(parseInt(params.id), "quote", newQuote.quote));
         }
-        navigate("/")
-    }
+        // Hitta objektet med samma id som params.id
+        let quoteObj = state.find((item) => item.id == params.id);
+
+        let newObjBeratTest = {
+            quote: "Hasta la vista",
+            author: "Berat",
+            episode: "13",
+        };
+        dispatch(editQuote(quoteObj, newObjBeratTest));
+        // navigate("/");
+        console.log("Save clicked");
+        console.log(quoteObj, "Quoteovj");
+    };
 
     return (
         <article className="editQuote">
             <h3>Edit quote: </h3>
-            <Form quote={quote} action={(e) => handleEdit(e)} actionAuthor={(e) => setNewQuote({ ...newQuote, "author": e.target.value})} actionQuote={(e) => setNewQuote({ ...newQuote, "quote": e.target.valure})}></Form>
+            <Form
+                quote={quote}
+                action={(e) => handleEdit(e)}
+                actionAuthor={(e) =>
+                    setNewQuote({ ...newQuote, author: e.target.value })
+                }
+                actionQuote={(e) =>
+                    setNewQuote({ ...newQuote, quote: e.target.value })
+                }
+            ></Form>
         </article>
-    )
- }
+    );
+}

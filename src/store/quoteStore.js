@@ -1,4 +1,5 @@
 export const quoteStore = {
     quote: [],
-    saved: []
-}
+    quotes: [],
+    saved: [],
+};

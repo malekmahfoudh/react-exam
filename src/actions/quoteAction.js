@@ -13,15 +13,20 @@ export const fillStock = (quotes) => ({
     payload: quotes,
 });
 
-export const editQuote = (quote, newValue) => ({
+export const editQuote = (id, property, newValue) => ({
     type: "EDIT_QUOTE",
     payload: {
-        quote,
-        newValue,
+        id,
+        property,
+        newValue
     },
 });
 
-export const addQuote = (newQuote) => ({
+export const addQuote = (quote, author, episode) => ({
     type: "ADD_QUOTE",
-    payload: newQuote,
+    payload: {
+        quote,
+        author,
+        episode
+    },
 });

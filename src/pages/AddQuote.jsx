@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react";
-import { Form, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addQuote } from "../actions/quoteAction";
 import style from "./AddQuote.module.scss";
+import Form from "../components/Form";
 
 export default function AddQuote() {
     const dispatch = useDispatch();
@@ -14,14 +15,9 @@ export default function AddQuote() {
 
     const addNewQuote = (e) => {
         e.preventDefault();
-        let newQuote = {
-            quote: quote,
-            author: author,
-            episode: episode,
-            id: id,
-        };
+        console.log(quote);
 
-        dispatch(addQuote(newQuote));
+        dispatch(addQuote(quote, author, episode));
         navigate("/");
     };
 

@@ -25,11 +25,23 @@ const quoteReducer = (state = quoteStore, action) => {
     //     quotes: [action.payload.newQuote, ...state.quote],
     //   };
     case "ADD_QUOTE":
-    //   let quoteToAdd = action.payload;
-    //   console.log("ADDED ITEM");
+      //   let quoteToAdd = action.payload;
+      //   console.log("ADDED ITEM");
+      
+      let largest = quotes.reduce(function (a, b) {
+            return (a.id > b.id) ? a.id : b.id;
+         }
+      );
+      let newQuote = {
+        author: action.payload.author,
+        quote: action.payload.quote,
+        episode: action.payload.episode,
+        id: largest + 1
+      }
+      console.log(newQuote);
       return {
         ...state,
-        quotes: [action.payload.newQuote, ...state.quotes],
+        quotes: [newQuote, ...state.quotes],
       };
 
     case "REMOVE_QUOTE":
@@ -55,11 +67,15 @@ const quoteReducer = (state = quoteStore, action) => {
       };
 
     case "EDIT_QUOTE":
-      let editedQuote = action.payload.editedQuote;
-      let updatedQuote = action.payload.updatedQuote;
+      console.log(action);
+
       let indexOfQuoteToEdit = state.quotes.findIndex(
-        (item) => item.id === editedQuote.id
+        (item) => item.id === action.payload.id
       );
+
+      let updatedQuote = state.quotes[indexOfQuoteToEdit];
+
+      updatedQuote[action.payload.property] = action.payload.newValue;
 
       state.quotes[indexOfQuoteToEdit] = {
         ...state.quotes[indexOfQuoteToEdit],

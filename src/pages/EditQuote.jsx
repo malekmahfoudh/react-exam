@@ -27,24 +27,25 @@ export default function EditQuote() {
 
     const handleEdit = (e) => {
         e.preventDefault();
+        let id = parseInt(params.id);
         if (newQuote.author) {
-            dispatch(editQuote(parseInt(params.id), "author", newQuote.author));
+            dispatch(editQuote(id, "author", newQuote.author));
         }
         if (newQuote.quote) {
-            dispatch(editQuote(parseInt(params.id), "quote", newQuote.quote));
+            dispatch(editQuote(id, "quote", newQuote.quote));
         }
         // Hitta objektet med samma id som params.id
-        let quoteObj = state.find((item) => item.id == params.id);
+        // let quoteObj = state.find((item) => item.id == params.id);
 
-        let newObjBeratTest = {
-            quote: "Hasta la vista",
-            author: "Berat",
-            episode: "13",
-        };
-        dispatch(editQuote(quoteObj, newObjBeratTest));
-        // navigate("/");
-        console.log("Save clicked");
-        console.log(quoteObj, "Quoteovj");
+        // let newObjBeratTest = {
+        //     quote: "Hasta la vista",
+        //     author: "Berat",
+        //     episode: "13",
+        // };
+        // dispatch(editQuote(quoteObj, newObjBeratTest));
+       
+        console.log("Save clicked"); 
+        navigate("/");
     };
 
     return (
